@@ -1,2 +1,3 @@
-# daw-systems-1
-Task 1
+# daw-systems
+
+Repozytorium zawiera odpowiedź na zadanie z rozmowy rektutacyjnej
