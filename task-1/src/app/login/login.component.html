@@ -1,11 +1,24 @@
-<div id="loginForm">
+<div id="loginForm" [formGroup]="loginGroup" novalidate>
 
     <label for="email">Podaj Twój adres e-mail </label>
-    <input #emailInputValue id="email" type="email" placeholder="Tutaj wpisz e-mail" (input)="insertEmail(emailInputValue.value)">
+    <input #emailInputValue 
+    id="email" 
+    type="email" 
+    placeholder="Tutaj wpisz e-mail" 
+    (input)="insertEmail(emailInputValue.value)"
+    formControlName="emailValid">
+    <div [hidden]="loginGroup.valid">Prawidłowy format adresu e-mail: example@domain.pl</div>
 
     <label for="pass">Podaj Twoje hasło </label>
-    <input #passwordInputValue id="pass" type="password" placeholder="Tutaj wpisz hasło" (input)="insertPassword(passwordInputValue.value)">
+    <input #passwordInputValue 
+    id="pass" 
+    type="password" 
+    placeholder="Tutaj wpisz hasło" 
+    (input)="insertPassword(passwordInputValue.value)" 
+    formControlName="passwordValid">
+    <div [hidden]="loginGroup.valid">Hasło musi zawierać conajmniej 4 znaki</div>
 
-    <button type="button" [disabled]="!fG.valid" (click)="loginData()">Zaloguj się</button>
+    <button type="button" [disabled]="loginGroup.invalid" (click)="loginData()">Zaloguj się</button>
+    <div [hidden]="loginGroup.valid">Uzupełnij wymagane pola, aby przycisk był aktywny</div>
 
 </div>
