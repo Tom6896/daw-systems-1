@@ -1,0 +1,14 @@
+#logoutBtn{
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    border: none;
+    cursor: pointer;
+    background-color: chocolate;
+    color: white;
+    font-size: 2em;
+    border-radius: 20%;
+
+}

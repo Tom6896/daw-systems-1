@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { MainViewComponent } from './main-view/main-view.component';
+import { LoginComponent, loginService } from './login/login.component';
+import { homeGuardService, MainViewComponent } from './main-view/main-view.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,10 @@ import { MainViewComponent } from './main-view/main-view.component';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    loginService,
+    homeGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
